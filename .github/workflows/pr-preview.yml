@@ -22,11 +22,9 @@ jobs:
 
       - name: Install
         run: npm ci
-        working-directory: ./GameOfLife-Web
 
       - name: Build
         run: npm run build
-        working-directory: ./GameOfLife-Web
 
       - name: Trigger Render deploy (preview)
         if: ${{ secrets.RENDER_SERVICE_ID && secrets.RENDER_API_KEY }}

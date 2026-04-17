@@ -1,4 +1,3 @@
-
 name: CI
 
 on:
@@ -27,6 +26,12 @@ jobs:
 
       - name: List test files
         run: ls -R tests || dir tests
+
+      - name: Print working directory
+        run: pwd
+
+      - name: Print Vitest version
+        run: npx vitest --version
 
       - name: Test
         run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose --dir=.

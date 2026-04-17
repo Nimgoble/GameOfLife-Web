@@ -39,5 +39,14 @@ jobs:
       - name: Run Vitest on a single test file
         run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose tests/BoardPlayback.test.tsx
 
+      - name: Show BoardPlayback.test.tsx contents
+        run: cat tests/BoardPlayback.test.tsx
+
+      - name: Type-check BoardPlayback.test.tsx
+        run: npx tsc --noEmit tests/BoardPlayback.test.tsx
+
+      - name: Show Vitest module resolution
+        run: node -p "require.resolve('vitest')"
+
       - name: Test
         run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose

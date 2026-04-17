@@ -2,6 +2,8 @@ Game of Life — Web (React + Vite + TypeScript)
 
 This is a small single-page application that talks to the GameOfLife API (the API lives in a different repository).
 
+It can be found here: https://gameoflife-web.onrender.com/
+
 Quick start (local):
 
 1. Install dependencies:

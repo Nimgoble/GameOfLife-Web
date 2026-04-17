@@ -8,7 +8,7 @@ export interface BoardGridProps {
   gap?: number
 }
 
-export default function BoardGrid({
+function BoardGrid({
   cells,
   readOnly = false,
   onToggle,
@@ -66,3 +66,5 @@ export default function BoardGrid({
     </div>
   )
 }
+
+export default React.memo(BoardGrid)

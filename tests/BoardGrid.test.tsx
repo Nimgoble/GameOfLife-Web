@@ -10,7 +10,6 @@ const simpleCells = [
 describe('BoardGrid', () => {
   it('renders the correct number of cells', () => {
     const { container } = render(<BoardGrid cells={simpleCells} readOnly />);
-    // 2x2 grid = 4 cells
     expect(container.querySelectorAll('div[title],button').length).toBe(4);
   });
 

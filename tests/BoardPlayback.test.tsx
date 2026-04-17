@@ -41,13 +41,10 @@ describe('BoardPlayback', () => {
       render(<BoardPlayback id='test' />);
     });
     const forwardBtn = screen.getAllByText(/Forward/)[0];
-    // Check for generation 0 inside an h3
     expect(screen.getAllByText(/Current state/)[0]).toHaveTextContent('0');
-    
     await act(async () => {
       fireEvent.click(forwardBtn);
     });
-    
     expect(screen.getAllByText(/Current state/)[0]).toHaveTextContent('1');
   });
 });

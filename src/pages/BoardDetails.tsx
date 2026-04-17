@@ -12,8 +12,8 @@ export default function BoardDetails() {
 
   useEffect(() => {
     if (!id) return
-    let cancelled = false
-    ;(async () => {
+    let cancelled = false;
+    (async () => {
       setLoading(true)
       try {
         const s = await getBoard(apiUrl, id)

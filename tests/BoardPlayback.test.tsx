@@ -15,8 +15,8 @@ const mockBoard = {
 };
 const mockFinal = { ...mockBoard };
 
-vi.mock('../api/client', async () => {
-  const actual = await vi.importActual<typeof api>('../api/client');
+vi.mock('../src/api/client', async () => {
+  const actual = await vi.importActual<typeof api>('../src/api/client');
   return {
     ...actual,
     getBoard: vi.fn(() => Promise.resolve(mockBoard)),
@@ -33,7 +33,15 @@ describe('BoardPlayback', () => {
     await act(async () => {
       render(<BoardPlayback id='test' />);
     });
-    expect(screen.getAllByText(/Size:/)[0]).toBeInTheDocument();
+
+    // Check for the board size info by searching the entire document text
+    const docText = document.body.textContent || '';
+    expect(docText.toLowerCase()).toContain('size');
+    expect(docText.replace(/\s+/g, '').toLowerCase()).toContain('size:2x2');
+
+    // Optionally, check that the grid is rendered (2x2)
+    const cells = screen.getAllByRole('button');
+    expect(cells.length).toBe(4);
   });
 
   it('advances generation on Forward click', async () => {

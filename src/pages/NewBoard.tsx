@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { uploadBoard } from '../api/client'
 import BoardGrid from '../components/BoardGrid'
 
@@ -86,13 +86,7 @@ export default function NewBoard() {
   return (
     <div style={{ marginTop: 24 }}>
       <h2>Create New Board</h2>
-      <button
-        type="button"
-        onClick={() => navigate('/')}
-        style={{ marginBottom: 16, padding: '8px 16px' }}
-      >
-        Back
-      </button>
+      <Link to="/" style={{ marginBottom: 16, display: 'inline-block' }}>← Back</Link>
       <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
           <div style={{ minWidth: 140 }}>

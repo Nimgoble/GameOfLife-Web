@@ -33,8 +33,5 @@ jobs:
       - name: Print Vitest version
         run: npx vitest --version
 
-      - name: Debug Vitest test discovery
-        run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose --dir=. --run
-
       - name: Test
-        run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose --dir=.
+        run: VITE_CJS_IGNORE_WARNING=true npx vitest run --reporter=verbose

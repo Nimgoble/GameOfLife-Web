@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, fireEvent, act } from '@testing-library/react';        
-import BoardPlayback from '../pages/BoardPlayback';
-import * as api from '../api/client';
+import BoardPlayback from '../src/pages/BoardPlayback';
+import * as api from '../src/api/client';
 
 const mockBoard = {
   id: 'test',

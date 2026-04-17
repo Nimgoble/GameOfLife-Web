@@ -26,7 +26,7 @@ jobs:
         run: npm run build
 
       - name: List test files
-        run: ls -R src/__tests__ || dir src\__tests__
+        run: ls -R tests || dir tests
 
       - name: Test
         run: npx vitest run --reporter=verbose

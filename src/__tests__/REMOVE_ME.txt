@@ -1,1 +1,0 @@
-Test files moved to /tests. This folder is now unused.

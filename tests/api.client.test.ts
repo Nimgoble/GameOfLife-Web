@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import * as api from '../api/client';
+import * as api from '../src/api/client';
 
 describe('API client', () => {
   it('exports required functions', () => {

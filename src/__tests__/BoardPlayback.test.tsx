@@ -31,20 +31,23 @@ vi.mock('../api/client', async () => {
 describe('BoardPlayback', () => {
   it('renders board info and grid', async () => {
     await act(async () => {
-      render(<BoardPlayback id="test" />);
+      render(<BoardPlayback id='test' />);
     });
-    expect(screen.getByText(/Size:/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Size:/)[0]).toBeInTheDocument();
   });
 
   it('advances generation on Forward click', async () => {
     await act(async () => {
-      render(<BoardPlayback id="test" />);
+      render(<BoardPlayback id='test' />);
     });
-    const forwardBtn = screen.getByText(/Forward/);
-    expect(screen.getByText(/0/)).toBeInTheDocument();
+    const forwardBtn = screen.getAllByText(/Forward/)[0];
+    // Check for generation 0 inside an h3
+    expect(screen.getAllByText(/Current state/)[0]).toHaveTextContent('0');
+    
     await act(async () => {
       fireEvent.click(forwardBtn);
     });
-    expect(screen.getByText(/1/)).toBeInTheDocument();
+    
+    expect(screen.getAllByText(/Current state/)[0]).toHaveTextContent('1');
   });
 });

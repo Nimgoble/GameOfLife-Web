@@ -86,6 +86,13 @@ export default function NewBoard() {
   return (
     <div style={{ marginTop: 24 }}>
       <h2>Create New Board</h2>
+      <button
+        type="button"
+        onClick={() => navigate('/')}
+        style={{ marginBottom: 16, padding: '8px 16px' }}
+      >
+        Back
+      </button>
       <form onSubmit={handleSubmit} style={{ maxWidth: 600 }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginBottom: 16 }}>
           <div style={{ minWidth: 140 }}>

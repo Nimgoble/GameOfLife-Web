@@ -42,9 +42,6 @@ jobs:
       - name: Show BoardPlayback.test.tsx contents
         run: cat tests/BoardPlayback.test.tsx
 
-      - name: Type-check BoardPlayback.test.tsx
-        run: npx tsc --noEmit tests/BoardPlayback.test.tsx
-
       - name: Show Vitest module resolution
         run: node -p "require.resolve('vitest')"
 

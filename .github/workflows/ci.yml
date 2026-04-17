@@ -1,3 +1,5 @@
+      - name: List test files
+        run: ls -R src/__tests__ || dir src\__tests__
 name: CI
 
 on:

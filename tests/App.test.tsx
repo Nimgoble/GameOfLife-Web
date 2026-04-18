@@ -7,7 +7,4 @@ describe('App', () => {
     render(<App />);
     expect(screen.getByText(/Game of Life — Web UI/)).toBeInTheDocument();
   });
-  it("should fail, so that we test Renders 'on ci checks pass' build deployment", () => {
-    expect(true).toBe(false);
-  });
 });

@@ -2,15 +2,15 @@ Game of Life — Web (React + Vite + TypeScript)
 
 This is a small single-page application that talks to the GameOfLife API (the API lives in a different repository).
 
-It can be found here: https://gameoflife-web.onrender.com/
+A demo of this site can be found on Render, here: https://gameoflife-web.onrender.com/
 
 Quick start (local):
 
 1. Install dependencies:
    npm ci
 
-2. Start dev server (set GOL_API_URL to your API base URL):
-   GOL_API_URL=http://localhost:5000 npm run dev
+2. Start dev server (set GOL_API_URL to your API base URL): 
+   npm run dev
 
 3. Build:
    npm run build
@@ -27,9 +27,7 @@ Notes on Vite configuration
    - For production, add `GOL_API_URL` to `.env.production` or your deploy platform's env settings.
 
 CI / Deploy
-- This repository contains GitHub Actions workflows that build and trigger deploys on Render (PR preview and main deploy) using Render's API. Set the following repository secrets if you want automated deploys:
-  - RENDER_SERVICE_ID
-  - RENDER_API_KEY
+- This repository contains GitHub Actions workflows that build and run unit tests.  Deployments are handled by Render.
 
 Notes
 - The API client is a small typed wrapper around the API endpoints in src/api/client.ts. It is intentionally lightweight; for stronger type-safety you can generate a client from the API's OpenAPI/Swagger spec.
